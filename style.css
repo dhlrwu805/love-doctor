@@ -21,25 +21,32 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: #2b1a2a;
   overflow: hidden;
+  touch-action: manipulation;  /* 휴대폰에서 두 번 탭할 때 확대되지 않게 */
 }
 
 /* 게임 화면을 창 크기에 맞춰 가운데에 (크기 조절은 script.js가 해요) */
 #stage {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
 }
 
 #game {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -480px;
+  margin-top: -270px;
   width: 960px;
   height: 540px;
-  flex-shrink: 0;
   overflow: hidden;
   font-family: var(--font);
   color: var(--ink);

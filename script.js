@@ -300,10 +300,21 @@ const popupBody = $("popup-body");
 // 7. 화면 크기 맞추기 + 캐릭터 사진 확인
 // ============================================================
 function fitGame() {
-  const scale = Math.min(window.innerWidth / 960, window.innerHeight / 540);
-  game.style.transform = "scale(" + scale + ")";
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  // 휴대폰을 세로로 들고 있으면 게임을 90도 돌려서 가로 화면처럼 보여 줘요
+  if (h > w) {
+    const scale = Math.min(h / 960, w / 540);
+    game.style.transform = "rotate(90deg) scale(" + scale + ")";
+  } else {
+    const scale = Math.min(w / 960, h / 540);
+    game.style.transform = "scale(" + scale + ")";
+  }
 }
 window.addEventListener("resize", fitGame);
+window.addEventListener("orientationchange", function () {
+  setTimeout(fitGame, 200);
+});
 fitGame();
 
 function showCharPlaceholder() {
