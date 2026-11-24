@@ -1033,3 +1033,479 @@ body {
 @keyframes tapPulse {
   50% { filter: brightness(1.12); }
 }
+
+/* ============================================================
+   조원진 루트 추가분
+   ============================================================ */
+
+/* 표지 A안: 위에 작은 로고 한 줄, 아래에 버튼 가로로 */
+#title-screen {
+  background-image: url("image/title_cover2.jpg");
+}
+
+.title-group {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: none;
+  justify-content: space-between;
+  padding: 26px 0 16px;
+}
+
+.logo {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  transform: rotate(-2deg);
+  margin: 0;
+}
+
+.logo .love,
+.logo .doctor {
+  display: inline-block;
+  font-size: 54px;
+  -webkit-text-stroke: 4px #1d1d1d;
+  text-shadow: 0 4px 0 #1d1d1d;
+}
+
+.logo .doctor {
+  font-size: 54px;
+  transform: rotate(2deg);
+}
+
+.h1 { top: -10px; right: -40px; font-size: 34px; }
+.h2 { bottom: -2px; left: -40px; font-size: 26px; }
+
+.logo-sub {
+  display: none;
+}
+
+.menu {
+  flex-direction: row;
+  gap: 10px;
+}
+
+.menu .jelly {
+  width: 210px;
+  height: 64px;
+  font-size: 23px;
+}
+
+/* 이름 화면 캐릭터 버튼 2개 */
+#btn-wonjin {
+  color: white;
+}
+
+/* 어두운 배경 (밤 복도) */
+#bg.dim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 15, 60, 0.5);
+}
+
+/* 화면 번쩍 */
+#flash {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#flash.play {
+  animation: flash 1s ease-out;
+}
+
+@keyframes flash {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* 도라지 이스터에그 */
+.doraji {
+  position: absolute;
+  z-index: 4;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.85;
+  animation: dorajiSway 2.4s ease-in-out infinite;
+}
+
+.doraji svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.doraji:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+@keyframes dorajiSway {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+#doraji-count {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 25;
+  padding: 2px 12px;
+  background: white;
+  border: 3px solid #1d1d1d;
+  border-radius: 999px;
+  font-size: 18px;
+  color: #6b3fa0;
+}
+
+#toast {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  z-index: 26;
+  min-width: 300px;
+  margin-left: -150px;
+  padding: 8px 16px;
+  background: #f4ecff;
+  border: 3px solid #1d1d1d;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 #9b6bd6;
+  font-size: 18px;
+  text-align: center;
+  pointer-events: none;
+}
+
+#toast b {
+  display: block;
+  color: #6b3fa0;
+}
+
+#toast.pop {
+  animation: pop 0.35s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+/* 문자 이벤트 (게임 중간) */
+#phone-scene.sms {
+  background: none;
+  cursor: default;
+}
+
+#phone-scene.sms #phone-skip {
+  display: none;
+}
+
+#phone {
+  display: flex;
+  flex-direction: column;
+}
+
+#phone-chat {
+  flex: 1;
+  overflow: hidden;
+}
+
+#phone-replies {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 10px 14px;
+}
+
+#phone-replies button {
+  padding: 7px 10px;
+  border: 2px solid #1d1d1d;
+  border-radius: 14px;
+  background: var(--pink-light);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.25;
+  color: var(--pink-dark);
+  cursor: pointer;
+  animation: pop 0.35s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+#phone-replies button:hover {
+  background: var(--pink);
+  color: white;
+}
+
+.bubble.me {
+  align-self: flex-end;
+  background: var(--pink);
+  color: white;
+  border-radius: 16px 4px 16px 16px;
+}
+
+/* 엔딩 영상 */
+#video-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  background: #120814;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#end-video {
+  height: 420px;
+  max-width: 100%;
+  border: 4px solid white;
+  border-radius: 12px;
+  background: black;
+}
+
+#video-caption {
+  margin-top: 10px;
+  padding: 4px 18px;
+  background: white;
+  border: 3px solid #1d1d1d;
+  border-radius: 999px;
+  font-size: 22px;
+  color: var(--pink-dark);
+}
+
+#video-credit {
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  font-size: 13px;
+  color: #cfc2d6;
+}
+
+#video-skip {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  padding: 4px 14px;
+  border: 2px solid white;
+  border-radius: 999px;
+  background: none;
+  font-family: var(--font);
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 미니게임 옆 조원진 (방해 / 커피) */
+.side-wonjin {
+  position: absolute;
+  right: 8px;
+  bottom: 40px;
+  width: 150px;
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.side-wonjin.left {
+  right: auto;
+  left: 8px;
+}
+
+.side-wonjin img {
+  width: 146px;
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0 #fff) drop-shadow(3px 3px 0 var(--pink));
+}
+
+.side-talk {
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  background: white;
+  border: 3px solid #1d1d1d;
+  border-radius: 14px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.side-wonjin.pop {
+  animation: pop 0.35s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+/* 심박수 게임 */
+.heart-top {
+  display: flex;
+  justify-content: space-between;
+  width: 520px;
+  font-size: 18px;
+}
+
+.heart-top .bpm {
+  font-size: 22px;
+}
+
+.ecg {
+  display: block;
+  margin-top: 4px;
+  border: 3px solid #1d1d1d;
+  border-radius: 10px;
+}
+
+/* 샌드위치 게임 */
+.sw-head {
+  display: flex;
+  justify-content: space-between;
+  width: 520px;
+  font-size: 19px;
+  color: #6b4a5a;
+}
+
+.sw-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 150px;
+  justify-content: center;
+}
+
+.sw-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.sw-item {
+  height: 52px;
+  border: 3px solid #1d1d1d;
+  border-radius: 14px;
+  background: #fff8e6;
+  font-family: var(--font);
+  font-size: 17px;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.sw-item.good {
+  background: #c9f5d6;
+}
+
+.sw-item.wrong {
+  background: #ffd0d8;
+  text-decoration: line-through;
+}
+
+.sw-chop {
+  font-size: 54px;
+}
+
+.sw-chop.chop {
+  animation: chop 0.15s;
+}
+
+@keyframes chop {
+  50% { transform: scale(0.8) rotate(-10deg); }
+}
+
+.sw-bar,
+.sw-gauge {
+  position: relative;
+  width: 400px;
+  height: 26px;
+  border: 3px solid #1d1d1d;
+  border-radius: 999px;
+  background: white;
+  overflow: hidden;
+}
+
+.sw-fill,
+.sw-level {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ffd1e6, var(--pink));
+}
+
+.sw-gauge {
+  margin-top: 16px;
+}
+
+.sw-level {
+  background: linear-gradient(90deg, #fffdf5, #ffe9b0);
+  border-right: 3px solid #1d1d1d;
+}
+
+.sw-zone {
+  position: absolute;
+  left: 60%;
+  width: 20%;
+  top: 0;
+  bottom: 0;
+  background: rgba(60, 220, 120, 0.4);
+}
+
+.sw-note {
+  margin-top: 6px;
+  font-size: 17px;
+}
+
+.sw-bread {
+  position: relative;
+  width: 360px;
+  height: 90px;
+  margin: 26px 0 6px;
+  border: 4px solid #8a5a2b;
+  border-radius: 20px 20px 10px 10px;
+  background: linear-gradient(#f6d79c, #e8b76a);
+}
+
+.sw-center {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  bottom: -10px;
+  border-left: 3px dashed #d1004f;
+}
+
+.sw-knife {
+  position: absolute;
+  top: -40px;
+  margin-left: -18px;
+  font-size: 36px;
+  transform: rotate(-45deg);
+}
+
+.sw-knife.down {
+  top: 10px;
+  transition: top 0.15s;
+}
+
+/* 엔딩 도감: 두 루트를 나란히 */
+.popup-box {
+  width: 720px;
+  max-height: 510px;
+}
+
+#popup-body {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.album-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.album-cols ul {
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.album-cols li {
+  font-size: 16px;
+  line-height: 1.35;
+}

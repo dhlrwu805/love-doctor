@@ -19,7 +19,7 @@
       <!-- 캐릭터 (표정은 script.js 1-2번 FACES에서 바꿔요) -->
       <div id="character" class="hidden">
         <img id="char-img" src="image/sujeong_basic.png" alt="">
-        <div id="char-placeholder" class="hidden">계수정<br>사진 자리</div>
+        <div id="char-placeholder" class="hidden">사진 자리</div>
       </div>
 
       <!-- 대화창 -->
@@ -72,7 +72,7 @@
           <input id="name-input" type="text" placeholder="이름 입력 (최대 6자)" maxlength="6" autocomplete="off">
           <p class="i18n">누구에게 다가갈까요?</p>
           <button class="jelly pink" id="btn-sujeong">♥ 계수정</button>
-          <button class="jelly locked i18n" id="btn-wonjin" disabled>🔒 조원진 (업데이트 예정)</button>
+          <button class="jelly blue" id="btn-wonjin">♥ 조원진</button>
           <button class="text-btn i18n" id="btn-back">← 돌아가기</button>
         </div>
       </div>
@@ -81,12 +81,26 @@
       <div id="phone-scene" class="hidden">
         <div id="phone">
           <div class="phone-notch"></div>
-          <div id="phone-noti"><b>💬 계수정</b><span class="i18n">사진을 보냈습니다.</span></div>
-          <div class="phone-header">‹ 계수정</div>
+          <div id="phone-noti"><b>💬 계수정</b><span>사진을 보냈습니다.</span></div>
+          <div class="phone-header" id="phone-name">‹ 계수정</div>
           <div id="phone-chat"></div>
+          <div id="phone-replies"></div>
         </div>
         <div id="phone-skip" class="i18n">클릭하면 건너뛰기 ▶</div>
       </div>
+
+      <!-- 엔딩 영상 (조원진 히든 엔딩 2) -->
+      <div id="video-scene" class="hidden">
+        <video id="end-video" playsinline preload="none"></video>
+        <div id="video-caption"></div>
+        <div id="video-credit"></div>
+        <button id="video-skip" class="i18n">건너뛰기 ▶</button>
+      </div>
+
+      <!-- 도라지 개수 / 조원진 한마디 / 화면 번쩍 -->
+      <div id="doraji-count" class="hidden"></div>
+      <div id="toast" class="hidden"></div>
+      <div id="flash"></div>
 
       <!-- 엔딩 화면 -->
       <div id="ending-screen" class="screen hidden">
