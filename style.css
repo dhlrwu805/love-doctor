@@ -482,7 +482,7 @@ body {
 
 #mg-panel {
   width: 640px;
-  padding: 20px 24px;
+  padding: 14px 24px;
   background: white;
   border: 4px solid #1d1d1d;
   border-radius: 22px;
@@ -578,9 +578,9 @@ body {
 
 .stitch-dot {
   position: absolute;
-  width: 46px;
-  height: 46px;
-  margin: -23px 0 0 -23px;
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
   border-radius: 50%;
   border: 3px solid #1d1d1d;
   background: white;
@@ -619,7 +619,7 @@ body {
 .claw-area {
   position: relative;
   width: 540px;
-  height: 280px;
+  height: 240px;
   background: linear-gradient(#c9f0ff, #eaf9ff);
   border: 3px solid #1d1d1d;
   border-radius: 18px;
@@ -1003,4 +1003,33 @@ body {
 /* 중국어일 때 한자가 있는 글꼴로 */
 #game.lang-zh {
   font-family: 'Jua', "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+/* ===== 미니게임 누르는 버튼 (휴대폰용) ===== */
+.tap-btn {
+  display: block;
+  margin: 8px auto 0;
+  width: 300px;
+  height: 58px;
+  border: 4px solid #1d1d1d;
+  border-radius: 999px;
+  background: linear-gradient(#ff8cc6, var(--pink));
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.6), 0 5px 0 #1d1d1d;
+  font-family: var(--font);
+  font-size: 26px;
+  color: white;
+  text-shadow: 2px 2px 0 var(--pink-dark);
+  cursor: pointer;
+  touch-action: none;
+  animation: tapPulse 0.9s infinite;
+}
+
+.tap-btn:active {
+  transform: translateY(4px) scale(0.97);
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.6), 0 1px 0 #1d1d1d;
+  animation: none;
+}
+
+@keyframes tapPulse {
+  50% { filter: brightness(1.12); }
 }

@@ -73,7 +73,7 @@ const ZH = {
   "SAD END 💔 계수정에게 거절당했어요": "SAD END 💔 被계수정拒绝了",
   "NORMAL END 🤝 좋은 동료로 남았어요": "NORMAL END 🤝 成为了好同事",
   "BAD END 🏃 계수정이 도망갔어요": "BAD END 🏃 계수정逃走了",
-  "계수정: 그럴 시간있으면, 그 시간에 봉합 연습이나 더 해..": "계수정：有那个时间，不如多练练缝合…",
+  "그럴 시간있으면, 그 시간에 봉합 연습이나 더 해..": "有那个时间，不如多练练缝合…",
   "계수정: 내일 수술, 늦지 마.": "계수정：明天的手术，别迟到。",
   "100점": "100分",
   "70~99점": "70~99分",
@@ -83,11 +83,13 @@ const ZH = {
   "여자친구 이제 퇴근.": "女朋友现在下班了。",
   // 미니게임
   "🔪 메스를 건네라!": "🔪 递手术刀！",
-  "표시가 초록 영역에 왔을 때 스페이스바 또는 클릭! (4번 중 3번 성공)": "指针进入绿色区域时按空格键或点击！（4次中成功3次）",
+  "표시가 초록 영역에 왔을 때 아래 [지금!] 버튼 또는 스페이스바! (4번 중 3번 성공)": "指针进入绿色区域时，按下方的【就是现在！】按钮或空格键！（4次中成功3次）",
+  "🔪 지금!": "🔪 就是现在！",
+  "🪝 내려!": "🪝 放下！",
   "🧵 봉합하기!": "🧵 缝合！",
-  "1번부터 7번까지 순서대로 클릭! (제한시간 6초, 순서 틀리면 실패)": "按1到7的顺序点击！（限时6秒，顺序错误即失败）",
+  "1번부터 7번까지 동그라미를 순서대로 터치! (제한시간 6초, 순서 틀리면 실패)": "按1到7的顺序点击圆圈！（限时6秒，顺序错误即失败）",
   "🍌 바나나우유 뽑기!": "🍌 抓香蕉牛奶！",
-  "집게가 바나나우유 위에 왔을 때 스페이스바 또는 클릭! (기회 3번)": "爪子移到香蕉牛奶上方时按空格键或点击！（3次机会）",
+  "집게가 바나나우유 위에 왔을 때 아래 [내려!] 버튼 또는 스페이스바! (기회 3번)": "爪子移到香蕉牛奶上方时，按下方的【放下！】按钮或空格键！（3次机会）",
   "★ 성공! ★": "★ 成功！★",
   "✘ 실패...": "✘ 失败…",
   "✔ 슥-! 정확해요!": "✔ 唰—！很准！",
@@ -124,9 +126,9 @@ const ZH = {
   "📖 게임 방법": "📖 游戏玩法",
   "💬 대화창 클릭 또는 스페이스바로 대사 넘기기": "💬 点击对话框或按空格键继续对话",
   "♥ 선택지에 따라 호감도가 오르거나 내려가요": "♥ 好感度会随着选择上升或下降",
-  "🔪 메스: 표시가 초록 영역에 왔을 때 스페이스바!": "🔪 手术刀：指针进入绿色区域时按空格键！",
+  "🔪 메스: 표시가 초록 영역에 왔을 때 [지금!] 버튼!": "🔪 手术刀：指针进入绿色区域时按【就是现在！】按钮！",
   "🧵 봉합: 1번부터 순서대로 빠르게 클릭!": "🧵 缝合：从1开始按顺序快速点击！",
-  "🍌 뽑기: 집게가 바나나우유 위에 왔을 때 스페이스바!": "🍌 抓娃娃：爪子移到香蕉牛奶上方时按空格键！",
+  "🍌 뽑기: 집게가 바나나우유 위에 왔을 때 [내려!] 버튼!": "🍌 抓娃娃：爪子移到香蕉牛奶上方时按【放下！】按钮！",
   "💘 호감도 100점이면 연애 성공! 낮으면…?": "💘 好感度100分即恋爱成功！分数低的话…？",
   "🕵️ 어떤 선택을 계속하면… 숨겨진 엔딩이?": "🕵️ 一直做某种选择的话…会有隐藏结局？"
 };
@@ -170,7 +172,8 @@ const FACES = {
   clawFail: "image/sujeong_claw_fail.png",   // 뽑기 실패
   clawSuccess: "image/sujeong_claw_success.png", // 뽑기 성공 (봉합 성공에도 사용)
   hidden: "image/sujeong_hidden.png",       // 히든 엔딩
-  run: "image/sujeong_run.png"              // 도망 엔딩
+  run: "image/sujeong_run.png",             // 도망 엔딩
+  sad: "image/sujeong_sad.png"              // 거절 엔딩
 };
 
 
@@ -357,7 +360,7 @@ const endings = {
       ]
     },
     { id: "sujeong_happy", min: 100, range: "100점", title: "HAPPY END ♥", text: "", phone: true },
-    { id: "sujeong_sad", min: 70, range: "70~99점", title: "SAD END 💔 계수정에게 거절당했어요", text: "계수정: 그럴 시간있으면, 그 시간에 봉합 연습이나 더 해.." },
+    { id: "sujeong_sad", min: 70, range: "70~99점", title: "SAD END 💔 계수정에게 거절당했어요", text: "", lines: [{ face: "sad", name: "계수정", text: "그럴 시간있으면, 그 시간에 봉합 연습이나 더 해.." }] },
     { id: "sujeong_normal", min: 40, range: "40~69점", title: "NORMAL END 🤝 좋은 동료로 남았어요", text: "계수정: 내일 수술, 늦지 마." },
     { id: "sujeong_bad", min: -999, range: "39점 이하", title: "BAD END 🏃 계수정이 도망갔어요", text: "", lines: [{ face: "run", name: "계수정", text: "...바나나 우유 사러 가야 해서. 먼저 갑니다." }] }
   ]
@@ -368,9 +371,9 @@ const endings = {
 // 4. 미니게임 설명 + 난이도
 // ============================================================
 const MG_TEXT = {
-  scalpel: { title: "🔪 메스를 건네라!", info: "표시가 초록 영역에 왔을 때 스페이스바 또는 클릭! (4번 중 3번 성공)" },
-  suture: { title: "🧵 봉합하기!", info: "1번부터 7번까지 순서대로 클릭! (제한시간 6초, 순서 틀리면 실패)" },
-  claw: { title: "🍌 바나나우유 뽑기!", info: "집게가 바나나우유 위에 왔을 때 스페이스바 또는 클릭! (기회 3번)" }
+  scalpel: { title: "🔪 메스를 건네라!", info: "표시가 초록 영역에 왔을 때 아래 [지금!] 버튼 또는 스페이스바! (4번 중 3번 성공)" },
+  suture: { title: "🧵 봉합하기!", info: "1번부터 7번까지 동그라미를 순서대로 터치! (제한시간 6초, 순서 틀리면 실패)" },
+  claw: { title: "🍌 바나나우유 뽑기!", info: "집게가 바나나우유 위에 왔을 때 아래 [내려!] 버튼 또는 스페이스바! (기회 3번)" }
 };
 
 // 미스터리 점수가 이만큼 모이면 고백할 때 히든 엔딩이 나와요 (조원진 선택지 3개 중 3개)
@@ -670,6 +673,24 @@ function showMessage(text, good) {
 }
 
 
+// 휴대폰용: 미니게임 아래 큰 버튼 하나만 누르면 되도록 (누르는 순간 바로 반응)
+function addTapButton(label, onPress) {
+  const button = document.createElement("button");
+  button.className = "tap-btn";
+  button.textContent = t(label);
+  button.addEventListener("pointerdown", function (e) {
+    e.preventDefault();
+    if (!mgGame) {
+      return;
+    }
+    if (navigator.vibrate) {
+      navigator.vibrate(25);
+    }
+    onPress();
+  });
+  mgArea.appendChild(button);
+}
+
 // ============================================================
 // 11. 미니게임 ① 메스 건네기 (타이밍 바)
 // ============================================================
@@ -760,7 +781,7 @@ function makeScalpelGame() {
       placeZone();
       drawTries();
       timer = setInterval(move, 16);
-      mgArea.onclick = press;
+      addTapButton("🔪 지금!", press);
     },
     press: press,
     stop: function () {
@@ -920,7 +941,7 @@ function makeClawGame() {
     }
     dropping = true;
     sfx("drop");
-    rope.style.height = "112px";
+    rope.style.height = "76px";
 
     setTimeout(function () {
       let caught = null;
@@ -931,7 +952,7 @@ function makeClawGame() {
       }
       rope.style.height = "20px";
       if (caught) {
-        caught.el.style.bottom = "130px";
+        caught.el.style.bottom = "100px";
       }
 
       setTimeout(function () {
@@ -975,7 +996,7 @@ function makeClawGame() {
       setupMilks();
       drawTries();
       timer = setInterval(move, 16);
-      mgArea.onclick = press;
+      addTapButton("🪝 내려!", press);
     },
     press: press,
     stop: function () {
@@ -1257,9 +1278,9 @@ function openHowTo() {
   const items = [
     "💬 대화창 클릭 또는 스페이스바로 대사 넘기기",
     "♥ 선택지에 따라 호감도가 오르거나 내려가요",
-    "🔪 메스: 표시가 초록 영역에 왔을 때 스페이스바!",
+    "🔪 메스: 표시가 초록 영역에 왔을 때 [지금!] 버튼!",
     "🧵 봉합: 1번부터 순서대로 빠르게 클릭!",
-    "🍌 뽑기: 집게가 바나나우유 위에 왔을 때 스페이스바!",
+    "🍌 뽑기: 집게가 바나나우유 위에 왔을 때 [내려!] 버튼!",
     "💘 호감도 100점이면 연애 성공! 낮으면…?",
     "🕵️ 어떤 선택을 계속하면… 숨겨진 엔딩이?"
   ];
