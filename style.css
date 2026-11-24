@@ -982,3 +982,25 @@ body {
 #btn-sound.off {
   opacity: 0.6;
 }
+
+/* ===== 언어 전환 버튼 ===== */
+#btn-lang {
+  position: absolute;
+  top: 10px;
+  right: 58px;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #1d1d1d;
+  background: var(--yellow);
+  font-family: var(--font);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--pink);
+}
+
+/* 중국어일 때 한자가 있는 글꼴로 */
+#game.lang-zh {
+  font-family: 'Jua', "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}

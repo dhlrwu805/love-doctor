@@ -4,6 +4,147 @@
 // ============================================================
 
 
+
+// ============================================================
+// 0. 중국어(간체) 번역표 — 왼쪽 한국어 문장이 오른쪽 중국어로 바뀌어요
+//    대사를 고치면 여기 왼쪽 문장도 똑같이 고쳐 주세요 (없으면 한국어 그대로 나와요)
+// ============================================================
+const ZH = {
+  // 장면 1
+  "어떡하지? 지각 할 것 같은데…": "怎么办？好像要迟到了…",
+  "누구지?": "谁啊？",
+  "안녕하세요! 오늘부터 근무하게 된 인턴입니다!": "您好！我是今天开始上班的实习生！",
+  "아.": "啊。",
+  "뭐라고 대답할까?": "该怎么回答呢？",
+  "길 좀 알려주세요…": "能给我指个路吗…",
+  "그런건 계약내용에 없었어서.": "合同里可没写这个。",
+  "그쪽은 누군데 초면에 반말이에요?": "你谁啊？第一次见面就不用敬语？",
+  "계수정.": "계수정。",
+  "바나나 우유 드실래요?": "要喝香蕉牛奶吗？",
+  "...... 길 정도는 알려줄 수 있어.": "……指个路还是可以的。",
+  "마취과의 조원진 교수님을 아세요?": "您认识麻醉科的조원진教授吗？",
+  "혹시… 마취과의 조원진 교수님을 아세요?": "请问…您认识麻醉科的조원진教授吗？",
+  "......그건 왜 묻지?": "……为什么问这个？",
+  // 장면 2
+  "(점심시간, 병원 매점에서 계수정과 다시 마주쳤다.)": "（午休时间，在医院小卖部又碰到了계수정。）",
+  "바나나 우유 있습니까? 아니면 칸쵸라도.": "有香蕉牛奶吗？没有的话，Kancho饼干也行。",
+  "🍌 있어요": "🍌 有",
+  "🙅 없어요": "🙅 没有",
+  "여기 있어요, 선생님.": "给您，医生。",
+  "{player}, 고맙습니다.": "{player}，谢谢。",
+  "죄송해요, 없어요...": "对不起，没有…",
+  "바나나 우유가 얼마나 중요한건지 모르는겁니까": "你不知道香蕉牛奶有多重要吗？",
+  "🤔 조원진 교수님이랑 친하신가요?": "🤔 您和조원진教授很熟吗？",
+  "근데… 조원진 교수님이랑 친하신가요?": "不过…您和조원진教授很熟吗？",
+  "...바나나 우유 얘기 중이었습니다만.": "…我们刚才在说香蕉牛奶的事。",
+  // 장면 3
+  "(그때, 병원 전체에 응급 호출이 울렸다.)": "（就在这时，全院响起了紧急呼叫。）",
+  "수술 들어가야돼. 따라와..": "要进手术了。跟上…",
+  "메스.": "手术刀。",
+  "... 잘하네.": "……不错嘛。",
+  "내 수술방에 메스조차 건네지 못하는 사람은 필요없어..": "连手术刀都递不好的人，我的手术室不需要…",
+  // 장면 4
+  "봉합은 {player} 선생이 해 보세요.": "缝合就交给{player}医生试试吧。",
+  "깔끔하네요. 합격입니다.": "很利落。合格了。",
+  "...비키세요. 내가 하죠.": "…让开。我来吧。",
+  // 장면 5
+  "수고했습니다. 잠깐 쉬죠.": "辛苦了。休息一下吧。",
+  "뭐라고 할까?": "说点什么呢？",
+  "수고하셨습니다, 선생님!": "您辛苦了，医生！",
+  "...그쪽도.": "…你也是。",
+  "계선생님, 조원진 교수님이 부르세요": "계医生，조원진教授找您",
+  "아 참, 계선생님! 조원진 교수님이 부르세요.": "对了，계医生！조원진教授找您。",
+  "...지금 간다고 전해 주세요.": "…帮我转告他，我马上过去。",
+  // 장면 6
+  "(수술이 끝나고, 매점 앞 뽑기 기계.)": "（手术结束后，小卖部门口的抓娃娃机。）",
+  "저 안에 바나나 우유. 뽑을 수 있습니까?": "里面那个香蕉牛奶。你能抓到吗？",
+  "...고맙습니다. 이건 기억해 두죠.": "…谢谢。这个我会记住的。",
+  "됐습니다. 내가 사 먹죠.": "算了。我自己去买。",
+  // 장면 7
+  "(퇴근길, 병원 옥상.)": "（下班路上，医院天台。）",
+  "{player} 선생. 오늘 하루, 어땠습니까?": "{player}医生。今天过得怎么样？",
+  "(지금 아니면 기회가 없다. 용기를 내자!)": "（现在不说就没机会了。鼓起勇气！）",
+  "선생님… 저, 선생님 좋아해요!": "医生…我、我喜欢您！",
+  // 엔딩
+  "미안합니다. 사실 저, 조원진 교수님이랑 사귀고 있습니다.": "对不起。其实我正在和조원진教授交往。",
+  "네…?!": "什么…？！",
+  "...바나나 우유 사러 가야 해서. 먼저 갑니다.": "…我得去买香蕉牛奶了。先走了。",
+  "HIDDEN END 🤫 계수정에게는 이미…": "HIDDEN END 🤫 계수정早已…",
+  "SAD END 💔 계수정에게 거절당했어요": "SAD END 💔 被계수정拒绝了",
+  "NORMAL END 🤝 좋은 동료로 남았어요": "NORMAL END 🤝 成为了好同事",
+  "BAD END 🏃 계수정이 도망갔어요": "BAD END 🏃 계수정逃走了",
+  "계수정: 그럴 시간있으면, 그 시간에 봉합 연습이나 더 해..": "계수정：有那个时间，不如多练练缝合…",
+  "계수정: 내일 수술, 늦지 마.": "계수정：明天的手术，别迟到。",
+  "100점": "100分",
+  "70~99점": "70~99分",
+  "40~69점": "40~69分",
+  "39점 이하": "39分以下",
+  "히든": "隐藏",
+  "여자친구 이제 퇴근.": "女朋友现在下班了。",
+  // 미니게임
+  "🔪 메스를 건네라!": "🔪 递手术刀！",
+  "표시가 초록 영역에 왔을 때 스페이스바 또는 클릭! (4번 중 3번 성공)": "指针进入绿色区域时按空格键或点击！（4次中成功3次）",
+  "🧵 봉합하기!": "🧵 缝合！",
+  "1번부터 7번까지 순서대로 클릭! (제한시간 6초, 순서 틀리면 실패)": "按1到7的顺序点击！（限时6秒，顺序错误即失败）",
+  "🍌 바나나우유 뽑기!": "🍌 抓香蕉牛奶！",
+  "집게가 바나나우유 위에 왔을 때 스페이스바 또는 클릭! (기회 3번)": "爪子移到香蕉牛奶上方时按空格键或点击！（3次机会）",
+  "★ 성공! ★": "★ 成功！★",
+  "✘ 실패...": "✘ 失败…",
+  "✔ 슥-! 정확해요!": "✔ 唰—！很准！",
+  "✘ 앗, 빗나갔다!": "✘ 啊，偏了！",
+  "(순서가 틀렸어요!)": "（顺序错了！）",
+  "(⏰ 시간 초과!)": "（⏰ 超时！）",
+  "🍌 바나나우유": "🍌 香蕉牛奶",
+  "🍓 딸기우유": "🍓 草莓牛奶",
+  "🍫 초코우유": "🍫 巧克力牛奶",
+  "... 꽝!": "……没抓到！",
+  "허공을 집었다!": "抓了个空！",
+  "남은 기회: ": "剩余机会：",
+  // 화면 글자
+  "♥ 병원 연애 시뮬레이션 ♥": "♥ 医院恋爱模拟 ♥",
+  "게임 방법": "游戏玩法",
+  "엔딩 도감": "结局图鉴",
+  "당신의 이름은?": "你的名字是？",
+  "누구에게 다가갈까요?": "想接近谁呢？",
+  "🔒 조원진 (업데이트 예정)": "🔒 조원진（即将更新）",
+  "← 돌아가기": "← 返回",
+  "사진을 보냈습니다.": "发送了一张照片。",
+  "클릭하면 건너뛰기 ▶": "点击跳过 ▶",
+  "♥ 다시하기 ♥": "♥ 再玩一次 ♥",
+  "닫기": "关闭",
+  "이름 입력 (최대 6자)": "输入名字（最多6个字）",
+  "이름을 입력해 주세요!": "请输入名字！",
+  "호감도 ": "好感度 ",
+  "점": "分",
+  "🕵️ 미스터리 ": "🕵️ 神秘值 ",
+  "히든 엔딩": "隐藏结局",
+  "♥ 계수정 루트": "♥ 계수정线",
+  "🔒 조원진 루트 · 업데이트 예정": "🔒 조원진线 · 即将更新",
+  "💘 엔딩 도감": "💘 结局图鉴",
+  "📖 게임 방법": "📖 游戏玩法",
+  "💬 대화창 클릭 또는 스페이스바로 대사 넘기기": "💬 点击对话框或按空格键继续对话",
+  "♥ 선택지에 따라 호감도가 오르거나 내려가요": "♥ 好感度会随着选择上升或下降",
+  "🔪 메스: 표시가 초록 영역에 왔을 때 스페이스바!": "🔪 手术刀：指针进入绿色区域时按空格键！",
+  "🧵 봉합: 1번부터 순서대로 빠르게 클릭!": "🧵 缝合：从1开始按顺序快速点击！",
+  "🍌 뽑기: 집게가 바나나우유 위에 왔을 때 스페이스바!": "🍌 抓娃娃：爪子移到香蕉牛奶上方时按空格键！",
+  "💘 호감도 100점이면 연애 성공! 낮으면…?": "💘 好感度100分即恋爱成功！分数低的话…？",
+  "🕵️ 어떤 선택을 계속하면… 숨겨진 엔딩이?": "🕵️ 一直做某种选择的话…会有隐藏结局？"
+};
+
+let lang = "ko";
+try {
+  lang = localStorage.getItem("drx_lang") || "ko";
+} catch (e) {
+  lang = "ko";
+}
+
+function t(str) {
+  if (lang === "zh" && ZH[str] !== undefined) {
+    return ZH[str];
+  }
+  return str;
+}
+
 // ============================================================
 // 1. 배경 이름표 (image 폴더의 파일)
 // ============================================================
@@ -331,7 +472,7 @@ if (charImg.complete && charImg.naturalWidth === 0) {
 // 8. 대사 진행
 // ============================================================
 function fill(str) {
-  return str.replaceAll("{player}", playerName);
+  return t(str).replaceAll("{player}", playerName);
 }
 
 function setBg(key) {
@@ -405,6 +546,7 @@ function advance() {
     openMinigame(line);
     return;
   }
+  sfx("next");
   goNext();
 }
 
@@ -428,6 +570,7 @@ function applyResult(result) {
 
 function changeMystery(amount) {
   mystery = mystery + amount;
+  sfx("mystery");
   console.log("미스터리 점수:", mystery);
   loveFx.textContent = "🕵️ ?";
   loveFx.classList.add("minus");
@@ -442,6 +585,7 @@ function changeLove(amount) {
   if (amount === 0) {
     return;
   }
+  sfx(amount > 0 ? "loveUp" : "loveDown");
   loveFx.textContent = (amount > 0 ? "♥ +" : "💔 ") + amount;
   loveFx.classList.toggle("minus", amount < 0);
   loveFx.classList.remove("play");
@@ -455,6 +599,7 @@ function changeLove(amount) {
 // ============================================================
 function openChoices(line) {
   busy = true;
+  sfx("sparkle");
   choiceTitle.textContent = fill(line.question || line.text);
   choiceList.innerHTML = "";
 
@@ -462,7 +607,7 @@ function openChoices(line) {
     const button = document.createElement("button");
     button.textContent = fill(choice.text);
     button.addEventListener("click", function () {
-      clickSound();
+      sfx("select");
       choicesBox.classList.add("hidden");
       dialogueBox.classList.remove("hidden");
       busy = false;
@@ -483,8 +628,8 @@ function openMinigame(line) {
   busy = true;
   mgLine = line;
   const type = line.minigame.type;
-  mgTitle.textContent = MG_TEXT[type].title;
-  mgInfo.textContent = MG_TEXT[type].info;
+  mgTitle.textContent = t(MG_TEXT[type].title);
+  mgInfo.textContent = t(MG_TEXT[type].info);
   mgArea.innerHTML = "";
   mgArea.onclick = null;
   mgResult.textContent = "";
@@ -493,6 +638,7 @@ function openMinigame(line) {
   dialogueBox.classList.add("hidden");
   minigameBox.classList.remove("hidden");
 
+  sfx("start");
   mgGame = MINIGAMES[type]();
   mgGame.start();
 }
@@ -504,8 +650,9 @@ function endMinigame(success, why) {
   mgGame.stop();
   mgGame = null;
   mgArea.onclick = null;
-  mgResult.textContent = (success ? "★ 성공! ★" : "✘ 실패...") + (why ? " " + why : "");
+  mgResult.textContent = t(success ? "★ 성공! ★" : "✘ 실패...") + (why ? " " + t(why) : "");
   mgResult.className = success ? "ok" : "bad";
+  sfx(success ? "win" : "lose");
 
   setTimeout(function () {
     minigameBox.classList.add("hidden");
@@ -578,10 +725,12 @@ function makeScalpelGame() {
     if (hit) {
       hits = hits + 1;
       marks.push("💗");
-      showMessage("✔ 슥-! 정확해요!", true);
+      sfx("hit");
+      showMessage(t("✔ 슥-! 정확해요!"), true);
     } else {
       marks.push("✖️");
-      showMessage("✘ 앗, 빗나갔다!", false);
+      sfx("miss");
+      showMessage(t("✘ 앗, 빗나갔다!"), false);
     }
     drawTries();
 
@@ -652,6 +801,7 @@ function makeSutureGame() {
       return;
     }
     button.classList.add("done");
+    sfx("tick");
     if (num > 1) {
       drawStitch(points[num - 2], points[num - 1]);
     }
@@ -745,7 +895,7 @@ function makeClawGame() {
   }
 
   function drawTries() {
-    triesBox.textContent = "남은 기회: " + "🪙".repeat(S.tries - tries);
+    triesBox.textContent = t("남은 기회: ") + "🪙".repeat(S.tries - tries);
   }
 
   function move() {
@@ -769,6 +919,7 @@ function makeClawGame() {
       return;
     }
     dropping = true;
+    sfx("drop");
     rope.style.height = "112px";
 
     setTimeout(function () {
@@ -786,13 +937,14 @@ function makeClawGame() {
       setTimeout(function () {
         tries = tries + 1;
         if (caught && caught.kind === "banana") {
-          endMinigame(true, "(" + NAMES.banana + " GET!)");
+          endMinigame(true, "(" + t(NAMES.banana) + " GET!)");
           return;
         }
+        sfx("miss");
         if (caught) {
-          showMessage(NAMES[caught.kind] + "... 꽝!", false);
+          showMessage(t(NAMES[caught.kind]) + t("... 꽝!"), false);
         } else {
-          showMessage("허공을 집었다!", false);
+          showMessage(t("허공을 집었다!"), false);
         }
         drawTries();
         if (tries >= S.tries) {
@@ -845,7 +997,7 @@ const MINIGAMES = {
 function startGame(route) {
   playerName = nameInput.value.trim();
   if (playerName === "") {
-    nameInput.placeholder = "이름을 입력해 주세요!";
+    nameInput.placeholder = t("이름을 입력해 주세요!");
     nameInput.focus();
     return;
   }
@@ -889,12 +1041,15 @@ function showEnding() {
   state = "ending";
   const ending = endingChosen;
   saveEnding(ending.id);
-  endingTitle.textContent = ending.title;
-  endingScore.textContent = ending.hidden ? "🕵️ 미스터리 " + mystery + "점 · 호감도 " + love + "점" : "호감도 " + love + "점";
+  endingTitle.textContent = t(ending.title);
+  endingScore.textContent = ending.hidden ? t("🕵️ 미스터리 ") + mystery + t("점") + " · " + t("호감도 ") + love + t("점") : t("호감도 ") + love + t("점");
   endingText.textContent = fill(ending.text);
   dialogueBox.classList.add("hidden");
   character.classList.add("hidden");
 
+  if (!ending.phone) {
+    sfx(ending.hidden ? "mystery" : "lose");
+  }
   if (ending.phone) {
     playPhoneScene(function () {
       endingScreen.classList.remove("hidden");
@@ -989,7 +1144,7 @@ function runPhoneStep(step) {
     ding();
   }
   if (step.action === "text") {
-    addBubble("", step.text);
+    addBubble("", t(step.text));
     ding();
   }
   if (step.action === "hearts") {
@@ -1019,6 +1174,10 @@ function playPhoneScene(onDone) {
 }
 
 function finishPhoneScene() {
+  if (phoneScene.classList.contains("hidden")) {
+    return;
+  }
+  sfx("win");
   phoneTimers.forEach(clearTimeout);
   phoneTimers = [];
   phoneScene.classList.add("hidden");
@@ -1031,6 +1190,13 @@ function finishPhoneScene() {
 
 phoneScene.addEventListener("click", finishPhoneScene);
 
+// 메뉴 버튼들 클릭 소리
+document.querySelectorAll(".jelly, .text-btn").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    sfx("click");
+  });
+});
+
 function goTitle() {
   state = "title";
   endingScreen.classList.add("hidden");
@@ -1039,7 +1205,7 @@ function goTitle() {
   character.classList.add("hidden");
   setBg(null);
   nameInput.value = "";
-  nameInput.placeholder = "이름 입력 (최대 6자)";
+  nameInput.placeholder = t("이름 입력 (최대 6자)");
   titleScreen.classList.remove("hidden");
 }
 
@@ -1075,31 +1241,29 @@ function openPopup(title, html) {
 
 function openAlbum() {
   const seen = loadSeen();
-  let html = "<p>♥ 계수정 루트</p><ul>";
+  let html = "<p>" + t("♥ 계수정 루트") + "</p><ul>";
   for (const e of endings.sujeong) {
     if (seen.includes(e.id)) {
-      html += "<li>" + e.title + " <small>(" + e.range + ")</small></li>";
+      html += "<li>" + t(e.title) + " <small>(" + t(e.range) + ")</small></li>";
     } else {
-      html += '<li class="locked">??? <small>(' + (e.hidden ? "히든 엔딩" : "호감도 " + e.range) + ")</small></li>";
+      html += '<li class="locked">??? <small>(' + (e.hidden ? t("히든 엔딩") : t("호감도 ") + t(e.range)) + ")</small></li>";
     }
   }
-  html += '</ul><p>🔒 조원진 루트 · 업데이트 예정</p>';
-  openPopup("💘 엔딩 도감", html);
+  html += "</ul><p>" + t("🔒 조원진 루트 · 업데이트 예정") + "</p>";
+  openPopup(t("💘 엔딩 도감"), html);
 }
 
 function openHowTo() {
-  openPopup(
-    "📖 게임 방법",
-    "<ul>" +
-      "<li>💬 대화창 클릭 또는 스페이스바로 대사 넘기기</li>" +
-      "<li>♥ 선택지에 따라 호감도가 오르거나 내려가요</li>" +
-      "<li>🔪 메스: 표시가 초록 영역에 왔을 때 스페이스바!</li>" +
-      "<li>🧵 봉합: 1번부터 순서대로 빠르게 클릭!</li>" +
-      "<li>🍌 뽑기: 집게가 바나나우유 위에 왔을 때 스페이스바!</li>" +
-      "<li>💘 호감도 100점이면 연애 성공! 낮으면…?</li>" +
-      "<li>🕵️ 어떤 선택을 계속하면… 숨겨진 엔딩이?</li>" +
-    "</ul>"
-  );
+  const items = [
+    "💬 대화창 클릭 또는 스페이스바로 대사 넘기기",
+    "♥ 선택지에 따라 호감도가 오르거나 내려가요",
+    "🔪 메스: 표시가 초록 영역에 왔을 때 스페이스바!",
+    "🧵 봉합: 1번부터 순서대로 빠르게 클릭!",
+    "🍌 뽑기: 집게가 바나나우유 위에 왔을 때 스페이스바!",
+    "💘 호감도 100점이면 연애 성공! 낮으면…?",
+    "🕵️ 어떤 선택을 계속하면… 숨겨진 엔딩이?"
+  ];
+  openPopup(t("📖 게임 방법"), "<ul>" + items.map(function (x) { return "<li>" + t(x) + "</li>"; }).join("") + "</ul>");
 }
 
 
@@ -1120,24 +1284,48 @@ function startBgm() {
   }
 }
 
-function clickSound() {
-  if (!soundOn) {
+// 효과음: 소리 파일 없이 코드로 만든 소리들 (이름으로 불러 써요)
+function tone(freq, when, dur, type, vol, slideTo) {
+  const t = audioCtx.currentTime + when;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, t);
+  if (slideTo) {
+    osc.frequency.exponentialRampToValueAtTime(slideTo, t + dur);
+  }
+  gain.gain.setValueAtTime(0.0001, t);
+  gain.gain.exponentialRampToValueAtTime(vol, t + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  osc.connect(gain).connect(audioCtx.destination);
+  osc.start(t);
+  osc.stop(t + dur + 0.02);
+}
+
+const SFX = {
+  click: function () { tone(880, 0, 0.07, "square", 0.08); },                       // 메뉴 버튼
+  next: function () { tone(1200, 0, 0.05, "sine", 0.08); },                         // 대사 넘기기
+  sparkle: function () { [1047, 1319, 1568, 2093].forEach(function (f, i) { tone(f, i * 0.05, 0.15, "sine", 0.12); }); }, // 선택지 등장
+  select: function () { tone(660, 0, 0.15, "triangle", 0.3, 1320); },              // 선택지 고르기
+  loveUp: function () { [784, 988, 1175].forEach(function (f, i) { tone(f, i * 0.08, 0.2, "triangle", 0.2); }); },     // 호감도 +
+  loveDown: function () { tone(330, 0, 0.35, "sawtooth", 0.12, 165); },            // 호감도 -
+  mystery: function () { tone(415, 0, 0.3, "sine", 0.18); tone(392, 0.25, 0.5, "sine", 0.18); },                        // 미스터리 +
+  start: function () { tone(300, 0, 0.3, "triangle", 0.2, 900); },                 // 미니게임 시작
+  hit: function () { tone(1568, 0, 0.12, "triangle", 0.2); tone(2093, 0.06, 0.18, "sine", 0.15); },                    // 미니게임 성공 1번
+  miss: function () { tone(180, 0, 0.25, "square", 0.12, 120); },                  // 미니게임 실패 1번
+  tick: function () { tone(1400, 0, 0.05, "square", 0.1); },                       // 봉합 점 클릭
+  drop: function () { tone(900, 0, 0.5, "sine", 0.15, 200); },                     // 집게 내려가기
+  win: function () { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, i * 0.1, 0.3, "triangle", 0.22); }); },   // 성공 팡파레
+  lose: function () { [392, 370, 349, 262].forEach(function (f, i) { tone(f, i * 0.18, 0.3, "sawtooth", 0.1); }); }    // 실패 효과음
+};
+
+function sfx(name) {
+  if (!soundOn || !SFX[name]) {
     return;
   }
   try {
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-    const t = audioCtx.currentTime;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = "triangle";
-    osc.frequency.setValueAtTime(660, t);
-    osc.frequency.exponentialRampToValueAtTime(1320, t + 0.08);
-    gain.gain.setValueAtTime(0.0001, t);
-    gain.gain.exponentialRampToValueAtTime(0.3, t + 0.01);
-    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
-    osc.connect(gain).connect(audioCtx.destination);
-    osc.start(t);
-    osc.stop(t + 0.2);
+    SFX[name]();
   } catch (e) {
     // 소리가 안 나는 환경이면 넘어가요
   }
@@ -1204,3 +1392,37 @@ document.addEventListener("keydown", function (e) {
     advance();
   }
 });
+
+
+// ============================================================
+// 17. 언어 바꾸기 (한국어 ↔ 中文)
+// ============================================================
+function applyLang() {
+  document.querySelectorAll(".i18n").forEach(function (el) {
+    if (!el.dataset.ko) {
+      el.dataset.ko = el.textContent;
+    }
+    el.textContent = t(el.dataset.ko);
+  });
+  nameInput.placeholder = t("이름 입력 (최대 6자)");
+  game.classList.toggle("lang-zh", lang === "zh");
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "ko";
+  $("btn-lang").textContent = lang === "zh" ? "한" : "中";
+}
+
+$("btn-lang").addEventListener("click", function () {
+  sfx("click");
+  lang = lang === "zh" ? "ko" : "zh";
+  try {
+    localStorage.setItem("drx_lang", lang);
+  } catch (e) {
+    // 저장이 안 되는 환경이면 넘어가요
+  }
+  applyLang();
+  // 대사 중에 바꾸면 지금 대사도 바로 바뀌게
+  if (state === "play" && !busy && story[index]) {
+    showLine();
+  }
+});
+
+applyLang();

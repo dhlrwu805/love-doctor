@@ -56,11 +56,11 @@
             <span class="heart h1">♥</span>
             <span class="heart h2">♥</span>
           </div>
-          <p class="logo-sub">♥ 병원 연애 시뮬레이션 ♥</p>
+          <p class="logo-sub i18n">♥ 병원 연애 시뮬레이션 ♥</p>
           <div class="menu">
             <button class="jelly pink" id="btn-start">START</button>
-            <button class="jelly yellow" id="btn-howto">게임 방법</button>
-            <button class="jelly blue" id="btn-album">엔딩 도감</button>
+            <button class="jelly yellow i18n" id="btn-howto">게임 방법</button>
+            <button class="jelly blue i18n" id="btn-album">엔딩 도감</button>
           </div>
         </div>
       </div>
@@ -68,12 +68,12 @@
       <!-- 이름 입력 + 캐릭터 선택 -->
       <div id="name-screen" class="screen hidden">
         <div class="panel">
-          <h2>당신의 이름은?</h2>
+          <h2 class="i18n">당신의 이름은?</h2>
           <input id="name-input" type="text" placeholder="이름 입력 (최대 6자)" maxlength="6" autocomplete="off">
-          <p>누구에게 다가갈까요?</p>
+          <p class="i18n">누구에게 다가갈까요?</p>
           <button class="jelly pink" id="btn-sujeong">♥ 계수정</button>
-          <button class="jelly locked" id="btn-wonjin" disabled>🔒 조원진 (업데이트 예정)</button>
-          <button class="text-btn" id="btn-back">← 돌아가기</button>
+          <button class="jelly locked i18n" id="btn-wonjin" disabled>🔒 조원진 (업데이트 예정)</button>
+          <button class="text-btn i18n" id="btn-back">← 돌아가기</button>
         </div>
       </div>
 
@@ -81,11 +81,11 @@
       <div id="phone-scene" class="hidden">
         <div id="phone">
           <div class="phone-notch"></div>
-          <div id="phone-noti"><b>💬 계수정</b><span>사진을 보냈습니다.</span></div>
+          <div id="phone-noti"><b>💬 계수정</b><span class="i18n">사진을 보냈습니다.</span></div>
           <div class="phone-header">‹ 계수정</div>
           <div id="phone-chat"></div>
         </div>
-        <div id="phone-skip">클릭하면 건너뛰기 ▶</div>
+        <div id="phone-skip" class="i18n">클릭하면 건너뛰기 ▶</div>
       </div>
 
       <!-- 엔딩 화면 -->
@@ -96,8 +96,8 @@
           <p id="ending-score"></p>
           <p id="ending-text"></p>
           <div class="ending-buttons">
-            <button class="jelly pink" id="btn-restart">♥ 다시하기 ♥</button>
-            <button class="jelly blue" id="btn-album2">엔딩 도감</button>
+            <button class="jelly pink i18n" id="btn-restart">♥ 다시하기 ♥</button>
+            <button class="jelly blue i18n" id="btn-album2">엔딩 도감</button>
           </div>
         </div>
       </div>
@@ -105,13 +105,14 @@
       <!-- 배경음악 -->
       <audio id="bgm" src="sound/bgm.mp3" loop preload="auto"></audio>
       <button id="btn-sound" title="배경음악 켜기/끄기">♪</button>
+      <button id="btn-lang" title="한국어 / 中文">中</button>
 
       <!-- 팝업 (게임 방법 / 엔딩 도감) -->
       <div id="popup" class="hidden">
         <div class="popup-box">
           <h2 id="popup-title"></h2>
           <div id="popup-body"></div>
-          <button class="jelly pink" id="popup-close">닫기</button>
+          <button class="jelly pink i18n" id="popup-close">닫기</button>
         </div>
       </div>
 
