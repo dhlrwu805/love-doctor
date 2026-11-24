@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOVE DOCTOR - 병원 연애 시뮬레이션</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="stage">
+    <div id="game">
+
+      <!-- 배경 -->
+      <div id="bg"></div>
+
+      <!-- 캐릭터 (표정은 script.js 1-2번 FACES에서 바꿔요) -->
+      <div id="character" class="hidden">
+        <img id="char-img" src="image/sujeong_basic.png" alt="">
+        <div id="char-placeholder" class="hidden">계수정<br>사진 자리</div>
+      </div>
+
+      <!-- 대화창 -->
+      <div id="dialogue-box" class="hidden">
+        <div id="name-tag"></div>
+        <div id="text"></div>
+        <div id="next-mark">▼</div>
+      </div>
+
+      <!-- 호감도 효과 -->
+      <div id="love-fx"></div>
+
+      <!-- 선택지 -->
+      <div id="choices" class="hidden">
+        <div id="choice-title"></div>
+        <div id="choice-list"></div>
+      </div>
+
+      <!-- 미니게임 -->
+      <div id="minigame" class="hidden">
+        <div id="mg-panel">
+          <div id="mg-title"></div>
+          <div id="mg-info"></div>
+          <div id="mg-area"></div>
+          <div id="mg-result"></div>
+        </div>
+      </div>
+
+      <!-- 타이틀 화면 -->
+      <div id="title-screen" class="screen">
+        <div class="title-group">
+          <div class="logo-wrap">
+            <h1 class="logo"><span class="love">LOVE</span><span class="doctor">DOCTOR</span></h1>
+            <span class="heart h1">♥</span>
+            <span class="heart h2">♥</span>
+          </div>
+          <p class="logo-sub">♥ 병원 연애 시뮬레이션 ♥</p>
+          <div class="menu">
+            <button class="jelly pink" id="btn-start">START</button>
+            <button class="jelly yellow" id="btn-howto">게임 방법</button>
+            <button class="jelly blue" id="btn-album">엔딩 도감</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 이름 입력 + 캐릭터 선택 -->
+      <div id="name-screen" class="screen hidden">
+        <div class="panel">
+          <h2>당신의 이름은?</h2>
+          <input id="name-input" type="text" placeholder="이름 입력 (최대 6자)" maxlength="6" autocomplete="off">
+          <p>누구에게 다가갈까요?</p>
+          <button class="jelly pink" id="btn-sujeong">♥ 계수정</button>
+          <button class="jelly locked" id="btn-wonjin" disabled>🔒 조원진 (업데이트 예정)</button>
+          <button class="text-btn" id="btn-back">← 돌아가기</button>
+        </div>
+      </div>
+
+      <!-- 해피 엔딩 문자 장면 -->
+      <div id="phone-scene" class="hidden">
+        <div id="phone">
+          <div class="phone-notch"></div>
+          <div id="phone-noti"><b>💬 계수정</b><span>사진을 보냈습니다.</span></div>
+          <div class="phone-header">‹ 계수정</div>
+          <div id="phone-chat"></div>
+        </div>
+        <div id="phone-skip">클릭하면 건너뛰기 ▶</div>
+      </div>
+
+      <!-- 엔딩 화면 -->
+      <div id="ending-screen" class="screen hidden">
+        <div class="ending-box">
+          <p id="ending-label">ENDING</p>
+          <h2 id="ending-title"></h2>
+          <p id="ending-score"></p>
+          <p id="ending-text"></p>
+          <div class="ending-buttons">
+            <button class="jelly pink" id="btn-restart">♥ 다시하기 ♥</button>
+            <button class="jelly blue" id="btn-album2">엔딩 도감</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 배경음악 -->
+      <audio id="bgm" src="sound/bgm.mp3" loop preload="auto"></audio>
+      <button id="btn-sound" title="배경음악 켜기/끄기">♪</button>
+
+      <!-- 팝업 (게임 방법 / 엔딩 도감) -->
+      <div id="popup" class="hidden">
+        <div class="popup-box">
+          <h2 id="popup-title"></h2>
+          <div id="popup-body"></div>
+          <button class="jelly pink" id="popup-close">닫기</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
